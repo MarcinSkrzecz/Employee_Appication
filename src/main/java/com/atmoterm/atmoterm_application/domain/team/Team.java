@@ -29,11 +29,6 @@ public class Team {
     private String name;
 
     @ManyToMany(mappedBy = "teams")
-    @JoinTable(
-            name = "JOIN_TEAM_EMPLOYEE",
-            joinColumns = @JoinColumn(name = "TEAM_ID"),
-            inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID")
-    )
     private List<Employee> employees = new ArrayList<>();
 
     public void addEmployee(Employee employee) {

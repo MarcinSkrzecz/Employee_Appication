@@ -1,7 +1,6 @@
 package com.atmoterm.atmoterm_application.mapper;
 import com.atmoterm.atmoterm_application.domain.employee.Employee;
 import com.atmoterm.atmoterm_application.domain.employee.EmployeeDto;
-import com.atmoterm.atmoterm_application.domain.team.Team;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -9,9 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -58,8 +55,6 @@ public class EmployeeMapperTests {
     @Test
     public void mapToToEmployeeTest_active() {
         //Given
-        Set<Team> team = new HashSet<>();
-        team.add(new Team(1L, "testName"));
         EmployeeDto employeeDto = new EmployeeDto(1L,"testName",123.45,
                 LocalDate.of(2021,05,23));
         //When

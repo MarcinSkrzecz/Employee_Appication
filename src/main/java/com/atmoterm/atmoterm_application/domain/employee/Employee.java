@@ -38,13 +38,17 @@ public class Employee {
     private LocalDate dateOfEmployment;
 
     @ManyToMany
+    @JoinTable(
+            name = "JOIN_EMPLOYEE_TEAM",
+            joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
+            inverseJoinColumns = @JoinColumn(name = "TEAM_ID")
+    )
     private List<Team> teams = new ArrayList<>();
 
     public void addToTeam(Team team) {
         teams.add(team);
         team.getEmployees().add(this);
     }
-
 
     //Create normal Employee
     public Employee(String name) {
